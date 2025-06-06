@@ -10,7 +10,6 @@ let allSockets:User[]=[];
 wss.on('connection',(socket)=>{
         socket.on("message",(message:string)=>{
             const parsedMessage=JSON.parse(message.toString())
-            console.log("parsed",parsedMessage)
             if(parsedMessage.type==="join"){
                 allSockets.push({
                     socket,
